@@ -1,5 +1,6 @@
 from random import choice
 from turtle import *
+from random import randint
 
 from freegames import floor, vector
 
@@ -40,6 +41,10 @@ tiles = [
 ]
 # fmt: on
 
+for ghost in ghosts:
+    # Adjust the speed randomly
+    speed_modifier = randint(1, 3)  # Adjust this range as needed
+    ghost[1] = vector(ghost[1].x // speed_modifier, ghost[1].y // speed_modifier)
 
 def square(x, y):
     """Draw square using path at (x, y)."""
